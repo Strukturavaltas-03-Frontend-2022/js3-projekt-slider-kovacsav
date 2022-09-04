@@ -1,0 +1,109 @@
+:root {
+  --sliderHeight: 500px; /*dafault: 500px*/
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.slider{
+  margin: auto;
+  position: relative;
+  width: 100%;
+  height: var(--sliderHeight);
+}
+
+.slide {
+  overflow: hidden;
+}
+
+.image{
+  width: 100%;
+  height: var(--sliderHeight);
+  object-fit: cover;
+}
+
+.number {
+  color: #f2f2f2;
+  font-size: 1rem;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.next, .previous{
+  cursor: pointer;
+  display: inline;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  margin-top: -22px;
+  padding: 16px;
+}
+
+.next{  
+  right: 0;
+  border-radius: 20% 0 0 20%;
+}
+
+.previous{
+  left: 0;
+  border-radius: 0 20% 20% 0;
+}
+
+.previous:hover, .next:hover {
+  background-color: rgba(44, 26, 26, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 3rem;
+  padding: 20px 20px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.circles{
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 2%;
+}
+
+.circle{
+cursor: pointer;
+height: 20px;
+width: 20px;
+margin: 0 5px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .circle:hover{
+  background-color: rgb(66, 44, 44);
+}
+
+.hide{
+  display: none;
+}
+
+.animate{
+  animation-name: appear;
+  animation-duration: 2s;
+}
+
+@keyframes appear{
+  0% {opacity: 0.2}
+  100% {opacity: 1}
+}
